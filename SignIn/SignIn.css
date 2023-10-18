@@ -9,7 +9,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(255, 255, 255);
+    background: #FFF;
+    z-index: 1;
 }
 
 .login {
@@ -106,6 +107,21 @@ body {
     opacity: 0.8;
 }
 
+.Ex1{
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 1);
+    width: 60%;
+    height: 600px;
+    border-radius: 20px;
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 100%;
+    grid-template-areas: "login";
+    z-index: 1;
+}
+
 .Ex {
     border-radius: 50px;
     background: conic-gradient(from 180deg at 61.43% 0%, rgba(255, 255, 255, 0.80) 0deg, rgba(255, 255, 255, 0.59) 60.00000178813934deg, rgba(255, 255, 255, 0.68) 144.0000021457672deg, rgba(220, 220, 220, 0.30) 216.00000858306885deg, rgba(227, 220, 155, 0.28) 225deg, rgba(218, 174, 52, 0.48) 331.3986825942993deg, rgba(215, 162, 24, 0.53) 360deg);
@@ -119,6 +135,7 @@ body {
     align-items: center;
     grid-template-columns: 100%;
     grid-template-areas: "login";
+    z-index: 1;
 }
 
 .parisLogo {
@@ -265,6 +282,51 @@ body {
     transform: scale(1.07);
 }
 
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+}
+
+.bubbles span {
+    position: relative;
+    width: 9px;
+    height: 8px;
+    background: conic-gradient(from 183deg at 37.27% 271.67%, #D7A218 0deg, rgba(214, 168, 34, 1.00) 161.2499964237213deg, rgba(165, 167, 66, 0.98) 238.12499284744263deg, rgba(179, 157, 37, 0.96) 360deg);
+    margin: 0 3px;
+    border-radius: 100%;
+    opacity: 0.6;
+    box-shadow: 0 0 0 10px conic-gradient(from 183deg at 37.27% 271.67%, #D7A218 0deg, rgba(214, 168, 34, 1.00) 161.2499964237213deg, rgba(165, 167, 66, 0.98) 238.12499284744263deg, rgba(179, 157, 37, 0.96) 360deg);
+    animation: animate 15s linear infinite;
+    animation-duration: calc(190s / var(--i));
+    filter: blur(1px);
+}
+
+.bubbles span:nth-child(even) {
+    filter: blur(1px);
+    opacity: 0.6;
+    background: conic-gradient(from 183deg at 37.27% 271.67%, #D7A218 0deg, rgba(214, 168, 34, 1.00) 161.2499964237213deg, rgba(165, 167, 66, 0.98) 238.12499284744263deg, rgba(179, 157, 37, 0.96) 360deg);
+    box-shadow: 0 0 0 10px conic-gradient(from 183deg at 37.27% 271.67%, #D7A218 0deg, rgba(214, 168, 34, 1.00) 161.2499964237213deg, rgba(165, 167, 66, 0.98) 238.12499284744263deg, rgba(179, 157, 37, 0.96) 360deg);
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(130vh) scale(1);
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(0);
+    }
+    
+}
+
 @media (min-width: 800px) {
     .Ex {
         grid-template-columns: 61.45833333% 38.54166667%;
@@ -371,5 +433,29 @@ body {
         border: 0.01px solid rgb(139, 137, 137, 0.0);
         border-radius: 100px;
         white-space: nowrap;
+    }
+    .bubbles span {
+        position: relative;
+        width: 10px;
+        height: 5px;
+        background: conic-gradient(from 183deg at 37.27% 271.67%, #D7A218 0deg, rgba(214, 168, 34, 1.00) 161.2499964237213deg, rgba(165, 167, 66, 0.98) 238.12499284744263deg, rgba(179, 157, 37, 0.96) 360deg);
+        margin: 0 3px;
+        border-radius: 100%;
+        opacity: 0.6;
+        box-shadow: 0 0 0 10px conic-gradient(from 183deg at 37.27% 271.67%, #D7A218 0deg, rgba(214, 168, 34, 1.00) 161.2499964237213deg, rgba(165, 167, 66, 0.98) 238.12499284744263deg, rgba(179, 157, 37, 0.96) 360deg);
+        animation: animate 15s linear infinite;
+        animation-duration: calc(190s / var(--i));
+        filter: blur(1px);
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translateY(130vh) scale(1);
+        }
+    
+        100% {
+            transform: translateY(-10vh) scale(0);
+        }
+        
     }
 }
